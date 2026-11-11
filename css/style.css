@@ -245,6 +245,24 @@ main {
   gap: var(--space-xl);
 }
 
+/*
+ * Använder ch här istället för att radlängden räknas i antal tecken, skulle jag byta typsnitt kommer radlängden bli den samma.
+ */
+p {
+  max-width: 65ch;
+}
+
+.skill-grid {
+  display: grid;
+  /*
+   * Antalet kolumner inuti räknas ut automatiskt, varje kolumn får ett minsta breddvärde (14rem) och finns mer plats delar alla på överskottet.
+   * 1fr för att rutorna växer i fraktion med sig själva om det finns mer utrymme än 14rem.
+   * autofit låter elementen breda ut sig istället för att lämna tomma ytor.
+   */
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: var(--space-md);
+}
+
 /* ==========================================================================
    Helper classes
    ========================================================================== */
