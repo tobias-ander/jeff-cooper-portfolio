@@ -84,6 +84,41 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+/*
+ * :root väljer root elementet i html, vilket är <html> och applicerar mina variabler och värden nedan
+ */
+:root {
+  /*
+   * -- talar om för webbläsaren att detta är ett värde som jag vill lagra under ett specifikt påhittat namn. Variablerna går i arv  till barnen i elementet.
+   * */
+  --body-bg: #faf6f0;
+  --surface: #ffffff;
+  --surface-subtle: #f1e7da;
+  --text: #231a14;
+  --text-secondary: #574a40;
+  --text-meta: #2a4a78;
+  --accent: #9e3516;
+  --divider: #d6c8b6;
+  --control-border: #8a7869;
+}
+
+/*
+ * @media kör style innehållet baserat på om ett villkor stämmer inom paranteserna. Så i detta fallet: om mörkt läge är valt så sätter vi andra styles för våra variabler i <html>
+ */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --body-bg: #191411;
+    --surface: #231c17;
+    --surface-subtle: #2e2520;
+    --text: #f3eae0;
+    --text-secondary: #c0af9f;
+    --text-meta: #8fb3dd;
+    --accent: #f08a68;
+    --divider: #3d332c;
+    --control-border: #93816f;
+  }
+}
+
 /* ==========================================================================
    Helper classes
    ========================================================================== */
@@ -244,4 +279,3 @@ textarea {
     page-break-after: avoid;
   }
 }
-
