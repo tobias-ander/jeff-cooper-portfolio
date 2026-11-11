@@ -101,6 +101,14 @@ textarea {
   --accent: #9e3516;
   --divider: #d6c8b6;
   --control-border: #8a7869;
+  /*
+   * Avstånden ligger bara här då det inte förändras med mörkt tema nedan
+   */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
 }
 
 /*
@@ -127,7 +135,18 @@ body {
    * värde i background-color och color och de fylls i beroende på läget.
    */
   background-color: var(--body-bg);
+  background-image: url("../img/bakgrund-marslandskap.webp");
+  background-size: cover;
+  background-position: center top;
+  /*
+   * Sätter background-attachment till fixed här för att undvika att bakgrundsbilden sträcker sig över hela sidans höjd istället för fönstrets.
+   */
+  background-attachment: fixed;
+  background-repeat: no-repeat;
   color: var(--text);
+  /*
+   * Olika typsnitt beroende på operativsystemets font i prioriterad ordning, Apple / Safari, Windows, Android, macOS, mm..
+   */
   font-family:
     system-ui,
     -apple-system,
@@ -138,6 +157,7 @@ body {
     sans-serif;
   font-size: 1rem;
   line-height: 1.6;
+  padding: var(--space-sm);
 }
 
 /*
@@ -168,6 +188,36 @@ h2 {
 
 h3 {
   font-size: clamp(1.125rem, 1.05rem + 0.4vw, 1.375rem);
+}
+
+header,
+main,
+aside,
+footer {
+  max-width: 70rem;
+  margin-inline: auto;
+  margin-bottom: var(--space-sm);
+  padding: var(--space-md);
+  background-color: var(--body-bg);
+}
+
+aside {
+  background-color: var(--surface-subtle);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: var(--accent);
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 /* ==========================================================================
