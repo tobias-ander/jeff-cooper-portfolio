@@ -220,6 +220,31 @@ nav ul {
   padding: 0;
 }
 
+.hero {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+/*
+ * Nollställer webbläsarens egna marginaler för elementen nedanför .hero
+ * alltså > * = allt under .hero så att de istället följer sidans gap / avståndet mellan objekten.
+ */
+.hero > * {
+  margin: 0;
+}
+
+.portrait {
+  max-width: 12rem;
+  border-radius: 0.75rem;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
 /* ==========================================================================
    Helper classes
    ========================================================================== */
