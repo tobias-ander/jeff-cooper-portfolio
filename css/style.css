@@ -85,11 +85,12 @@ textarea {
    ========================================================================== */
 
 /*
- * :root väljer root elementet i html, vilket är <html> och applicerar mina variabler och värden nedan
+ * :root väljer root elementet i html, vilket är <html> och applicerar mina variabler och värden nedan.
  */
 :root {
   /*
-   * -- talar om för webbläsaren att detta är ett värde som jag vill lagra under ett specifikt påhittat namn. Variablerna går i arv  till barnen i elementet.
+   * -- talar om för webbläsaren att detta är ett värde som jag vill lagra under ett
+   * specifikt påhittat namn. Variablerna går i arv  till barnen i elementet.
    * */
   --body-bg: #faf6f0;
   --surface: #ffffff;
@@ -103,7 +104,8 @@ textarea {
 }
 
 /*
- * @media kör style innehållet baserat på om ett villkor stämmer inom paranteserna. Så i detta fallet: om mörkt läge är valt så sätter vi andra styles för våra variabler i <html>
+ * @media kör style innehållet baserat på om ett villkor stämmer inom paranteserna.
+ * Så i detta fallet: om mörkt läge är valt så sätter vi andra styles för våra variabler i <html>.
  */
 @media (prefers-color-scheme: dark) {
   :root {
@@ -117,6 +119,55 @@ textarea {
     --divider: #3d332c;
     --control-border: #93816f;
   }
+}
+
+body {
+  /*
+   * Här skriver jag in variablen från de två lägen ovan (ljust/mörkt) istället för att sätta ett fast
+   * värde i background-color och color och de fylls i beroende på läget.
+   */
+  background-color: var(--body-bg);
+  color: var(--text);
+  font-family:
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/*
+ * Alla tre h-taggar får samma gemensamma grundegenskaper men specifiseras enskilt efteråt
+ * utifrån vad som skiljer de åt i textstorlek.
+ */
+h1,
+h2,
+h3 {
+  font-family: "Archivo", system-ui, sans-serif;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+/*
+ * Clamp låser ett minimum- och maximumvärde och ett önskat värde. Minimum först, sedan det rörliga värdet och sist det maximala värdet.
+ * När storleken på webb-fönstret förändras räknas värdena om för att anpassas efter enhetens skärmutrymme eller fönstrets storlek.
+ * vw används som en tredje enhet som knyter fönstrets procentuella bredd med rubrikens storlek, rem-värdet som adderas med vw
+ * är det som gör att inställningarna slår igenom för användaren.
+ */
+h1 {
+  font-size: clamp(2rem, 1.5rem + 2.5vw, 3.25rem);
+}
+
+h2 {
+  font-size: clamp(1.5rem, 1.3rem + 1vw, 2rem);
+}
+
+h3 {
+  font-size: clamp(1.125rem, 1.05rem + 0.4vw, 1.375rem);
 }
 
 /* ==========================================================================
