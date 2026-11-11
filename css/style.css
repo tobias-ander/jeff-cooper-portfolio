@@ -263,6 +263,90 @@ p {
   gap: var(--space-md);
 }
 
+/*
+ * list-style-type "" tar bort siffrorna i listan och margin och padding 0 nollställer listvärdena.
+ * list-style none för safari kan tolka det som att det inte är en lista alls längre,
+ * list-style-type "" gör i stället så att markören blir osynlig men finns kvar.
+ * Siffrornas ordning behövs inte här eftersom vi sorterar innehållet efter tidslinje av uppdrag, plus det är snyggare utan..
+ * display flex med flex direction column gör att posterna i en kolumn styrs av gap avståndet istället.
+ */
+.timeline {
+  list-style-type: "";
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  margin: 0;
+  padding: 0;
+}
+
+.timeline li {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  padding-left: var(--space-sm);
+  /*
+   * La 1 px här för att rem skulle annars bli onödig decimalform.
+   */
+  border-left: 1px solid var(--control-border);
+}
+
+.timeline li > * {
+  margin: 0;
+}
+
+.period {
+  color: var(--text-meta);
+  font-size: 0.875rem;
+}
+
+/*
+ * Ändrar färg på alla p element förutom den som har classen .period
+ */
+.timeline p:not(.period) {
+  color: var(--text-secondary);
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: var(--space-md);
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  padding: var(--space-sm);
+  border: 1px solid var(--divider);
+  border-radius: 0.75rem;
+  background-color: var(--surface);
+}
+
+.project-card > * {
+  margin: 0;
+}
+
+.project-card img {
+  width: 100%;
+  border-radius: 0.5rem;
+}
+
+.quick-facts {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--space-xs) var(--space-sm);
+  margin: 0;
+}
+
+.quick-facts dt {
+  color: var(--text-meta);
+  font-size: 0.875rem;
+}
+
+.quick-facts dd {
+  margin: 0;
+}
+
 /* ==========================================================================
    Helper classes
    ========================================================================== */
