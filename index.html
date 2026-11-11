@@ -83,6 +83,15 @@
 
     <main id="main-content">
       <section class="hero">
+        <!-- Loading Lazy: Använder inte loading lazy här för att porträttbilden ska laddas direkt. Bilder senare på sidan laddas med loading lazy istället för att undvika att sidan laddas långsamt. -->
+        <img
+          class="portrait"
+          src="img/jeff_cooper.webp"
+          width="600"
+          height="600"
+          alt="Jeff Cooper i mörk kostym och blå slips, med en portfölj under armen"
+        />
+
         <h1>Jeff Cooper</h1>
 
         <p class="tagline">Grafisk designer · Mars.ly, Mars</p>
@@ -224,6 +233,167 @@
           etiketteori förändrade hur jag ser på en arbetsplats.
         </p>
       </section>
+
+      <section id="projects">
+        <h2>Projekt</h2>
+
+        <div class="project-grid">
+          <!-- Article: använder article här istället för projektinläggen som uppdateringar/blogginlägg -->
+          <article class="project-card">
+            <h3>Marsiversary 30</h3>
+            <img
+              src="img/projekt-kampanj.webp"
+              width="800"
+              height="534"
+              loading="lazy"
+              alt="Fyra affischer i stil med gamla reseaffischer, med marslandskap och texten 30 years of splendor"
+            />
+            <p class="role">Creative Director, Mars.ly</p>
+            <p>
+              Kampanj för koloniens trettioårsjubileum. Tre koncept, levererade
+              på två dagar efter att riktningen ändrats fullständigt.
+            </p>
+            <p class="learned">
+              Vad jag lärde mig: att ta emot feedback från samtliga intressenter
+              samtidigt.
+            </p>
+          </article>
+
+          <article class="project-card">
+            <h3>Organisationskarta, Comms</h3>
+            <img
+              src="img/projekt-organisationskarta.webp"
+              width="800"
+              height="534"
+              loading="lazy"
+              alt="Organisationskarta på en datorskärm, med femton medarbetare i rutor kopplade med linjer"
+            />
+            <p class="role">Grafisk designer, Mars.ly</p>
+            <p>
+              Informationsdesign över kommunikationsavdelningens femton
+              medarbetare och rapportvägar. Jag står längst ner till höger.
+            </p>
+            <p class="learned">
+              Vad jag lärde mig: att en organisationskarta kan vara inaktuell
+              samma morgon den presenteras.
+            </p>
+          </article>
+
+          <article class="project-card">
+            <h3>Visuell identitet, eget visitkort</h3>
+            <img
+              src="img/projekt-visitkort.webp"
+              width="800"
+              height="534"
+              loading="lazy"
+              alt="Visitkort i en hållare av trä, med namnet Jeff Cooper i versaler och Mars.ly-logotypen"
+            />
+            <p class="role">Eget arbete</p>
+            <p>
+              Trycksak i två färger. Typografin satt med utgångspunkt i
+              avsändarens logotyp.
+            </p>
+            <p class="learned">
+              Vad jag lärde mig: att ett visitkort håller längre än den tjänst
+              som står på det.
+            </p>
+          </article>
+        </div>
+      </section>
+      <section id="contact">
+        <h2>Kontakt</h2>
+
+        <p>
+          Jag tar emot uppdrag. Signalen till jorden tar sju minuter. Resten av
+          väntetiden är mitt fel.
+        </p>
+
+        <form class="contact-form">
+          <fieldset class="field-group">
+            <legend>Om dig</legend>
+
+            <label for="name">Namn (obligatoriskt)</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              autocomplete="name"
+              required
+            />
+
+            <label for="email">E-post (obligatoriskt)</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              autocomplete="email"
+              required
+            />
+
+            <label for="website">Webbplats</label>
+            <input type="url" id="website" name="website" autocomplete="url" />
+
+            <label for="phone">Telefon</label>
+            <input type="tel" id="phone" name="phone" autocomplete="tel" />
+          </fieldset>
+          <fieldset class="field-group">
+            <legend>Ditt ärende</legend>
+
+            <label for="subject">Vad gäller det?</label>
+            <select id="subject" name="subject">
+              <option value="uppdrag">Uppdragsförfrågan</option>
+              <option value="samarbete">Samarbete</option>
+              <option value="aterkoppling">
+                Återkoppling på levererat material
+              </option>
+              <option value="omprioritering">Omprioritering</option>
+              <option value="ovrigt">Övrigt</option>
+            </select>
+
+            <label for="message">Meddelande (obligatoriskt)</label>
+            <textarea id="message" name="message" rows="6" required></textarea>
+
+            <input type="checkbox" id="newsletter" name="newsletter" />
+            <label for="newsletter">
+              Ja tack, skicka mig nyhetsbrevet. Jag formger det själv.
+            </label>
+          </fieldset>
+
+          <button class="submit" type="submit">Skicka</button>
+        </form>
+
+        <!-- Adress: använder adress här istället för en enkel div med ett id för att förtydliga kodens innehåll -->
+        <address class="contact-details">
+          Jeff Cooper<br />
+          Mars.ly-residensen, sektor 4, Kolonin, Mars<br />
+          <a href="tel:4471">Kommunikator 4471</a><br />
+          <a href="mailto:jeff.cooper@mars.ly">jeff.cooper@mars.ly</a>
+        </address>
+      </section>
     </main>
+    <aside class="sidebar">
+      <h2>Snabbfakta</h2>
+
+      <!-- dl vs ul: Använder dl, dt och dd här istället för en vanliga lista då informationen som listas hör ihop och är par av namn och värde och ul hade istället skapat ett kolon -->
+      <dl class="quick-facts">
+        <dt>Baserad i</dt>
+        <dd>Kolonin, Mars</dd>
+
+        <dt>Uppdragsform</dt>
+        <dd>På plats</dd>
+
+        <dt>Tillgänglig</dt>
+        <dd>Omgående</dd>
+
+        <dt>Restid från jorden</dt>
+        <dd>7 månader</dd>
+
+        <dt>Returresa</dt>
+        <dd>Ej aktuell</dd>
+
+        <dt>År i yrket</dt>
+        <dd>16 år, plus tiden här</dd>
+      </dl>
+    </aside>
   </body>
 </html>
