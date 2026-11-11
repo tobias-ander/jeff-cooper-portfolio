@@ -39,7 +39,19 @@
     <link rel="apple-touch-icon" href="icon.png" />
     <link rel="manifest" href="site.webmanifest" />
 
-    <meta name="theme-color" content="#fafafa" />
+    <!-- Color schemes: lade till color-scheme för light och dark mode, media gör att rätt färg väljs för rätt läge -->
+    <meta name="color-scheme" content="light dark" />
+    <meta
+      name="theme-color"
+      content="#FAF6F0"
+      media="(prefers-color-scheme: light)"
+    />
+    <meta
+      name="theme-color"
+      content="#191411"
+      media="(prefers-color-scheme: dark)"
+    />
+
     <link rel="stylesheet" href="css/style.css" />
   </head>
 
