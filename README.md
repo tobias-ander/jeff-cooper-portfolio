@@ -14,12 +14,12 @@ Uppgiften krävde en portfolio. Resten var en möjlighet i förklädnad.
 
 Sidan är granskad med tre verktyg. Full transparens: Best Practices stannade på 96.
 
-| Verktyg                     | Resultat                                                      |
-| --------------------------- | ------------------------------------------------------------- |
-| W3C HTML Validator          | No errors or warnings to show                                 |
-| Chrome Lighthouse, Mobile   | Performance 99, Accessibility 100, Best Practices 96, SEO 100 |
-| Chrome Lighthouse, Desktop  | Performance 99, Accessibility 100, Best Practices 96, SEO 100 |
-| Firefox Accessibility Tools | Inga problem                                                  |
+| Verktyg                     | Resultat                                                       |
+| --------------------------- | -------------------------------------------------------------- |
+| W3C HTML Validator          | No errors or warnings to show                                  |
+| Chrome Lighthouse, Mobile   | Performance 99, Accessibility 100, Best Practices 96, SEO 100  |
+| Chrome Lighthouse, Desktop  | Performance 100, Accessibility 100, Best Practices 96, SEO 100 |
+| Firefox Accessibility Tools | Inga problem                                                   |
 
 Skärmdumparna ligger i mappen `audits/`, sparade inför nästa steg.
 
