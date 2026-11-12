@@ -21,7 +21,7 @@ Sidan är granskad med tre verktyg. Full transparens: Best Practices stannade p�
 | Chrome Lighthouse, Desktop  | Performance 100, Accessibility 100, Best Practices 96, SEO 100 |
 | Firefox Accessibility Tools | Inga problem                                                   |
 
-Skärmdumparna ligger i mappen `audits/`, sparade inför nästa steg.
+Skärmdumparna ligger i mappen `audits/`.
 
 | Skärmdump                                                                 | Innehåll                             |
 | ------------------------------------------------------------------------- | ------------------------------------ |
