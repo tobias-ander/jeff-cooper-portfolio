@@ -17,22 +17,20 @@ Sidan är granskad med tre verktyg. Full transparens: Best Practices stannade p�
 | Verktyg                     | Resultat                                                      |
 | --------------------------- | ------------------------------------------------------------- |
 | W3C HTML Validator          | No errors or warnings to show                                 |
-| Chrome Lighthouse           | Performance 99, Accessibility 100, Best Practices 96, SEO 100 |
+| Chrome Lighthouse, Mobile   | Performance 99, Accessibility 100, Best Practices 96, SEO 100 |
+| Chrome Lighthouse, Desktop  | Performance 99, Accessibility 100, Best Practices 96, SEO 100 |
 | Firefox Accessibility Tools | Inga problem                                                  |
 
 Skärmdumparna ligger i mappen `audits/`, sparade inför nästa steg.
 
-| Fil                                | Innehåll                              |
-| ---------------------------------- | ------------------------------------- |
-| `audits/w3c-html-validator.png`    | Validatorns sammanfattning            |
-| `audits/lighthouse.png`            | Lighthouse-rapportens fyra poäng      |
-| `audits/firefox-accessibility.png` | Resultatet från fliken Tillgänglighet |
-
-![W3C HTML Validator](audits/w3c-html-validator.png)
-
-![Chrome Lighthouse](audits/lighthouse.png)
-
-![Firefox Accessibility Tools](audits/firefox-accessibility.png)
+| Skärmdump                                                                 | Innehåll                             |
+| ------------------------------------------------------------------------- | ------------------------------------ |
+| [w3c-html-validator.png](audits/w3c-html-validator.png)                   | Validatorns sammanfattning           |
+| [lighthouse-mobile-settings.png](audits/lighthouse-mobile-settings.png)   | Inställningar, Mobile                |
+| [lighthouse-mobile.png](audits/lighthouse-mobile.png)                     | Resultat, Mobile                     |
+| [lighthouse-desktop-settings.png](audits/lighthouse-desktop-settings.png) | Inställningar, Desktop               |
+| [lighthouse-desktop.png](audits/lighthouse-desktop.png)                   | Resultat, Desktop                    |
+| [firefox-accessibility.png](audits/firefox-accessibility.png)             | Resultatet från fliken Accessibility |
 
 ## Om tv-serien och upphovsrätten
 
