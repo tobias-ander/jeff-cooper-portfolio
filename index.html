@@ -109,16 +109,16 @@
 
         <p>
           Jag arbetade med identitet, skyltprogram och kampanjmaterial i sexton
-          år innan jag flyttade hit. Jag sökte tjänsten, blev erbjuden den och
-          skrev på samma vecka. Resan tog sju månader. Jag tycker att det säger
-          något om hur jag ser på ett uppdrag.
+          år innan jag flyttade till Mars. Jag sökte tjänsten, blev erbjuden den
+          och skrev på samma vecka. Resan tog sju månader. Jag tycker att det
+          säger något om hur jag ser på ett uppdrag.
         </p>
 
         <p>
           Sedan dess har jag haft sex roller inom samma organisation. Jag ser
           omorganisation som en chans att lära känna verksamheten från ett nytt
-          håll. Jag har arbetat med ledningens kommunikationsbehov,
-          internkommunikation, materialflöden ute på ytan och koloniens
+          perspektiv. Jag har arbetat med ledningens kommunikationsbehov,
+          internkommunikation, materialflöden ute på Marsytan och koloniens
           proteinförsörjning. Få i yrket kan säga det.
         </p>
 
@@ -379,10 +379,13 @@
             <label for="message">Meddelande (obligatoriskt)</label>
             <textarea id="message" name="message" rows="6" required></textarea>
 
-            <input type="checkbox" id="newsletter" name="newsletter" />
-            <label for="newsletter">
-              Ja tack, skicka mig nyhetsbrevet. Jag formger det själv.
-            </label>
+            <!-- La input och label innuti en div för att få till en snygg linjering med checkbox och tillhörande text -->
+            <div class="checkbox-field">
+              <input type="checkbox" id="newsletter" name="newsletter" />
+              <label for="newsletter">
+                Ja tack, skicka mig nyhetsbrevet. Jag formger det själv.
+              </label>
+            </div>
           </fieldset>
 
           <button class="submit" type="submit">Skicka</button>

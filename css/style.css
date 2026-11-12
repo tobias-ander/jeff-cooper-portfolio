@@ -193,7 +193,7 @@ h3 {
 header,
 main,
 aside,
-footer {
+body > footer {
   max-width: 70rem;
   margin-inline: auto;
   margin-bottom: var(--space-sm);
@@ -228,7 +228,7 @@ nav ul {
 
 /*
  * Nollställer webbläsarens egna marginaler för elementen nedanför .hero
- * alltså > * = allt under .hero så att de istället följer sidans gap / avståndet mellan objekten.
+ * alltså > * = alla direkta barn under .hero så att de istället följer sidans gap / avståndet mellan objekten.
  */
 .hero > * {
   margin: 0;
@@ -246,7 +246,8 @@ main {
 }
 
 /*
- * Använder ch här istället för att radlängden räknas i antal tecken, skulle jag byta typsnitt kommer radlängden bli den samma.
+ * Använder ch här för att radlängden ska räknas i antal tecken, skulle jag byta typsnitt kommer radlängdens antal tecken bli den samma.
+ * Hade jag använt rem istället så hade radlängden förändrats om man bytte typsnitt.
  */
 p {
   max-width: 65ch;
@@ -300,7 +301,7 @@ p {
 }
 
 /*
- * Ändrar färg på alla p element förutom den som har classen .period
+ * Ändrar färg på alla p element innuti tidslinjen förutom den som har classen .period
  */
 .timeline p:not(.period) {
   color: var(--text-secondary);
@@ -345,6 +346,191 @@ p {
 
 .quick-facts dd {
   margin: 0;
+}
+
+blockquote {
+  margin-inline: 0;
+  padding-left: var(--space-sm);
+  border-left: 1px solid var(--control-border);
+}
+
+blockquote footer {
+  color: var(--text-meta);
+  font-size: 0.875rem;
+}
+
+.external {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: var(--space-xs);
+}
+
+.external img {
+  border-radius: 0.5rem;
+}
+
+.site-footer p {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.field-group label {
+  margin-top: var(--space-xs);
+}
+
+/*
+ * Lägger till font inherit här för annars hade inputen fått operativsystemets egna typsnitt för inputs. Nu ärvs istället typsnitt ifrån body.
+ * Box sizing och border box finns här istälelt för en global regel för att jag endast vill applicera det här och inte röra något i boilerplates egen kod.
+ */
+.field-group input:not([type="checkbox"]),
+.field-group select,
+.field-group textarea {
+  font: inherit;
+  color: var(--text);
+  background-color: var(--surface);
+  border: 1px solid var(--control-border);
+  border-radius: 0.5rem;
+  padding: var(--space-xs);
+  min-height: 2.75rem;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.field-group input[type="checkbox"] {
+  align-self: start;
+  flex-shrink: 0;
+  width: 1.5rem;
+  aspect-ratio: 1;
+  margin: 0;
+  accent-color: var(--accent);
+}
+
+.checkbox-field {
+  display: flex;
+  align-items: start;
+  gap: var(--space-xs);
+}
+
+.checkbox-field label {
+  margin-top: 0;
+}
+
+.submit {
+  align-self: start;
+  font: inherit;
+  color: var(--body-bg);
+  background-color: var(--accent);
+  border: 1px solid var(--accent);
+  border-radius: 0.5rem;
+  padding: var(--space-xs) var(--space-md);
+  min-height: 2.75rem;
+  cursor: pointer;
+}
+
+/*
+ * Valde att använda :focus-visible istället för bara focus för outline.
+ * focus hade fungerat och gett en outline för för klick med musen och tab med tangentbord men
+ * med :focus-visible blir det ingen ring runt om man klickar på en länk men om jag tabbar med
+ * tangentbordet blir den omsluten av en ring.
+ */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+a:hover {
+  color: var(--text);
+}
+
+.submit:hover {
+  color: var(--accent);
+  background-color: var(--body-bg);
+}
+
+a,
+.submit {
+  transition:
+    color 150ms,
+    background-color 150ms;
+}
+
+/*
+ * Stänger av transition ovanför för de som valt att ha det avstängt i operativsystemet för att
+ * undvika yrsel eller illamående, en liten quality of life förändring i det stora hela.
+ */
+@media (prefers-reduced-motion: reduce) {
+  a,
+  .submit {
+    transition: none;
+  }
+}
+
+/*
+ * Denna regeln gäller bara när bredde är större än eller lika med 36em, är fönstret smalare så ändras ingenting. Detta är som en liten livrem för mobil-layouten.
+ * em används här istället för px då px är ett ast mått och em räknas på webbläsarens grundstorlek för text, skulle någon ha ökat textstorleken
+ * på sin enhet så borde brytpunkten följa med och skala utrymmet rätt.
+ */
+@media (min-width: 36em) {
+  .site-nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+  }
+
+  .hero {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: var(--space-md);
+  }
+
+  .portrait {
+    grid-row: span 2;
+  }
+
+  .hero h1 {
+    align-self: end;
+  }
+
+  .hero .tagline {
+    align-self: start;
+  }
+}
+
+@media (min-width: 64em) {
+  body {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    column-gap: var(--space-sm);
+    max-width: 70rem;
+    margin-inline: auto;
+  }
+
+  .skip-link,
+  .site-header,
+  main,
+  .sidebar,
+  .site-footer {
+    margin-inline: 0;
+  }
+
+  .skip-link,
+  .site-header,
+  .site-footer {
+    grid-column: 1 / -1;
+  }
 }
 
 /* ==========================================================================
